@@ -1,6 +1,5 @@
 AutoSynth - a Customizable Synthetic Data Generator for Machine Learning
-Objective:
-Build a Python tool that can automatically generate synthetic datasets for various machine learning tasks (e.g., image, text, tabular data). The tool should allow users to define parameters such as noise, imbalance, feature dependencies, and augmentation strategies, which makes it highly customizable.
+a Python tool that can automatically generate synthetic datasets for various machine learning tasks (e.g., image, text, tabular data). The tool should allow users to define parameters such as noise, imbalance, feature dependencies, and augmentation strategies, which makes it highly customizable.
 
 Feature Plan:
 1. Data Type Flexibility:
