@@ -9,9 +9,10 @@ class TextDataGenerator(DataGenerator):
         self.n_sentences = n_sentences
         self.vocabulary = [f'word{i}' for i in range(self.vocab_size)]
 
-    def generate(self):
+    def generate(self): 
         sentences = []
         for _ in range (self.n_sentences):
-            sentence = ''.join(random.choices(self.vocabulary, k=self.sentence_length))
+            sentence = random.choices(self.vocabulary, k=self.sentence_length)
             sentences.append(sentence)
-        return sentences
+        print(sentences)
+        return sentences 

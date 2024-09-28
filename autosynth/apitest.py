@@ -1,23 +1,21 @@
 from api import AutoSynthAPI
-
-#Tabular
+from augment import Noise
+# Tabular
 print("Tabular Data: \n")
-tabular_api = AutoSynthAPI('tabular')
-X, y = tabular_api.generate_data(n_samples=1000, n_features=10)
-print(X.head())
-print("\n")
+tabular_api = AutoSynthAPI('tabular', n_samples=10, n_features=10)
+augmentor = Noise(1)
+X, y = tabular_api.generate_data(augment=True, augmentor=augmentor)
+#print(X.head())
 
 # Generating images
-print("Image Data \n")
-image_api = AutoSynthAPI('image')
-images = image_api.generate_data(n_images=5, image_size=(32, 32))
-for img in images:
-    img.show()
-print("\n")
+image_api = AutoSynthAPI('image', n_images=5, image_size=(32, 32))
+images = image_api.generate_data()
+#for img in images:
+#    img.show()
+
 
 # Generating text data
 print("Text Data \n")
-text_api = AutoSynthAPI('text')
-sentences = text_api.generate_data(n_sentences=5, sentence_length=12)
+text_api = AutoSynthAPI('text', n_sentences=5, sentence_length=12)
+sentences = text_api.generate_data(augment=True, augmentor=augmentor)
 print(sentences)
-print("\n")
